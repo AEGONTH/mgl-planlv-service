@@ -3,6 +3,8 @@ package com.adms.mglplanlv.service.productionbylot;
 import java.util.Date;
 import java.util.List;
 
+import org.hibernate.criterion.DetachedCriteria;
+
 import com.adms.mglplanlv.entity.ProductionByLot;
 
 public interface ProductionByLotService {
@@ -13,5 +15,6 @@ public interface ProductionByLotService {
 	public ProductionByLot addProductionByLot(ProductionByLot productionByLot, String batchId) throws Exception;
 	public ProductionByLot updateProductionByLot(ProductionByLot productionByLot, String batchId) throws Exception;
 	public List<ProductionByLot> findByNamedQuery(String queryName, Object...values) throws Exception;
+	public List<ProductionByLot> findByCriteria(DetachedCriteria detachedCriteria) throws Exception;
 	
 }

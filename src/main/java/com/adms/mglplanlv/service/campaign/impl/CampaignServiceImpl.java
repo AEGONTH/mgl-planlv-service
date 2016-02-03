@@ -2,6 +2,7 @@ package com.adms.mglplanlv.service.campaign.impl;
 
 import java.util.List;
 
+import org.hibernate.criterion.DetachedCriteria;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -29,6 +30,11 @@ public class CampaignServiceImpl implements CampaignService {
 	@Override
 	public List<Campaign> findByHql(String hql, Object... objects) throws Exception {
 		return campaignDao.findByHQL(hql, objects);
+	}
+	
+	@Override
+	public List<Campaign> findByCriteria(DetachedCriteria detachedCriteria) throws Exception {
+		return campaignDao.findByCriteria(detachedCriteria);
 	}
 
 	@Override

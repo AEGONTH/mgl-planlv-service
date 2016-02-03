@@ -3,6 +3,7 @@ package com.adms.mglplanlv.service.productionbylot.impl;
 import java.util.Date;
 import java.util.List;
 
+import org.hibernate.criterion.DetachedCriteria;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -35,6 +36,11 @@ public class ProductionByLotServiceImpl implements ProductionByLotService {
 	@Override
 	public List<ProductionByLot> findByNamedQuery(String queryName, Object...values) throws Exception {
 		return productionByLotDao.findByNamedQuery(queryName, values);
+	}
+	
+	@Override
+	public List<ProductionByLot> findByCriteria(DetachedCriteria detachedCriteria) throws Exception {
+		return productionByLotDao.findByCriteria(detachedCriteria);
 	}
 
 	@Override
